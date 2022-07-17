@@ -1,6 +1,5 @@
 # imports
 import os, jwt, ssl
-from dotenv import dotenv_values
 import datetime, time
 import paho.mqtt.client as mqtt
 import json
