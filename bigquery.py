@@ -1,6 +1,5 @@
 from bisect import bisect
 from google.cloud import bigquery, exceptions
-from matplotlib.pyplot import table
 from google.cloud.bigquery.enums import EntityTypes
 
 def create_dataset_and_table(service_account_json, project_id, dataset, table):
