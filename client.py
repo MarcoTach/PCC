@@ -11,7 +11,6 @@ from bigquery import create_dataset_and_table
 
 # setting variables
 device_id = 'vehicle001'
-certificate_file = 'keys/RSA/rsa_public.pem'
 service_account_json = 'keys/coreiot.json'
 project_id = 'pccreverselogistic'
 cloud_region = 'europe-west1' 
@@ -20,10 +19,11 @@ subscription_id = "vehicle_realtime_positions"
 registry_id = 'vehicles' 
 only_mqtt = True
 algorithm = "RS256"
-ca_certs = "keys/ca/roots.cer"
 mqtt_bridge_hostname = 'mqtt.googleapis.com'
 mqtt_bridge_port = 8883
-private_key_file = "keys/RSA/rsa_private.pem"
+ca_certs = "p_keys/ca/roots.cer"
+certificate_file = 'p_keys/RSA/rsa_public.pem'
+private_key_file = "p_keys/RSA/rsa_private.pem"
 bqCollection="vehicles_positions"
 bqOutputTable="positions"
 
