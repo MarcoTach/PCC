@@ -99,30 +99,30 @@ row = 1
 # master topic where publish messages
 master_topic = '/devices/{}/events'.format(device_id)
 
-# client.loop_start()
-# while row < 5:
-#     data = []
-#     for v in vehicles:
-#         with open("vehicles_data/{}.txt".format(v)) as fp:
-#             for i, line in enumerate(fp):
-#                 if i == row:
-#                     data.append(line.strip())
+client.loop_start()
+while True:
+    data = []
+    for v in vehicles:
+        with open("vehicles_data/{}.txt".format(v)) as fp:
+            for i, line in enumerate(fp):
+                if i == row:
+                    data.append(line.strip())
                     
-#     for idx, data in enumerate(data):
-#         topic = master_topic + "/" + str(idx + 1)
-#         # data is like 17,2008-02-02 13:55:02,116.07255,38
-#         splitted_data = str(data).split(",")
-#         payload = {
-#             "vehicle": splitted_data[0],
-#             "timestamp": splitted_data[1],
-#             "lat": splitted_data[2],
-#             "lon": splitted_data[3]
-#         }
-#         client.publish(topic, payload=json.dumps(payload).encode(encoding="UTF-8"), qos=0, retain=False)
-#     time.sleep(10)
-#     row = row + 1
+    for idx, data in enumerate(data):
+        topic = master_topic + "/" + str(idx + 1)
+        # data is like 17,2008-02-02 13:55:02,116.07255,38
+        splitted_data = str(data).split(",")
+        payload = {
+            "vehicle": splitted_data[0],
+            "timestamp": splitted_data[1],
+            "lat": splitted_data[2],
+            "lon": splitted_data[3]
+        }
+        client.publish(topic, payload=json.dumps(payload).encode(encoding="UTF-8"), qos=0, retain=False)
+    time.sleep(10)
+    row = row + 1
 
-# client.loop_stop()
+client.loop_stop()
 
-client.loop_forever()
+#client.loop_forever()
 

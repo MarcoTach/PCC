@@ -75,7 +75,7 @@ def on_disconnect(unused_client, unused_userdata, rc):
 
 def on_publish(unused_client, unused_userdata, unused_mid):
     """Paho callback when a message is sent to the broker."""
-    print("Sent message with ID {}".format(unused_mid))
+    #print("Sent message with ID {}".format(unused_mid))
 
 def on_message(unused_client, unused_userdata, message):
     """Callback when the device receives a message on a subscription.
