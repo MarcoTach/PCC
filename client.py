@@ -119,7 +119,7 @@ while True:
             "lon": splitted_data[3]
         }
         client.publish(topic, payload=json.dumps(payload).encode(encoding="UTF-8"), qos=0, retain=False)
-    time.sleep(10)
+    time.sleep(20)
     row = row + 1
 
 client.loop_stop()
