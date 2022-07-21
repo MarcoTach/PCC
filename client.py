@@ -66,9 +66,9 @@ if type(tab) == exceptions.Conflict:
 
 print("-------- Dataflow Job ---------")
 # create dataflow job or check if it is running
-# df = create_job_from_template(service_account_json, project_id, device_pubsub_topic, bqCollection, bqOutputTable )
-# if type(df) == exceptions.AlreadyExists:
-#     print(df.message, "... going on with client")
+df = create_job_from_template(service_account_json, project_id, device_pubsub_topic, bqCollection, bqOutputTable )
+if type(df) == exceptions.AlreadyExists:
+    print(df.message, "... going on with client")
 
 
 print("-------- Execution ---------")
