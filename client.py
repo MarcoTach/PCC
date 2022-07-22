@@ -109,9 +109,9 @@ while True:
                     data.append(line.strip())
                     
     for idx, data in enumerate(data):
-        topic = master_topic + "/" + str(idx + 1)
-        # data is like 17,2008-02-02 13:55:02,116.07255,38
         splitted_data = str(data).split(",")
+        topic = master_topic + "/" + splitted_data[0].strip()
+        # data is like 17,2008-02-02 13:55:02,116.07255,38
         payload = {
             "vehicle": splitted_data[0],
             "timestamp": splitted_data[1],
